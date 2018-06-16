@@ -49,17 +49,17 @@ jobs:
           path: ~/junit
 
 workflows:
-   version: 2
-   default:
-     jobs:
-       - build
-   nightly:
-     triggers:
-       - schedule:
-           cron: "0 0 * * *"
-           filters:
-             branches:
-               only:
-                 - master
-     jobs:
-       - build
+  version: 2
+  default:
+    jobs:
+      - build
+  nightly:
+    triggers:
+      - schedule:
+        cron: "0 0 * * *"
+        filters:
+          branches:
+            only:
+              - master
+  jobs:
+    - build
